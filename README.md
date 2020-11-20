@@ -1,12 +1,13 @@
 # FinalProject_Caulk
-a repo for final project 
-this is something new
-uh oh why is it so loudewfweefwwe
+Repo for Caleb Caulk's final project  
+  
+The basic idea is to take all the ski resorts in the state of Colorado and data initially obtained from OpenSnow.com to determine which resorts will get the most snow from a storm in inches (aka nar). Then there an algorithm that will calculate which resort would be the best one to visit based off of snow accumulation and distance from a starting point and other factors such as percentage open.
+  
+This final project will implement min and max Heaps and a Graph. This program will include a Class that represents a resort which will store data like base depth, capacity, crowded(how crowded the resort is), predicted snow, adjacent resorts, and name. Snow total data from OpenSnow.com will be put in a csv formated ("resort name, snow prediction total in inches"). The program will make several Heaps, min and max, all based on different data. For example one heap will be for predicted snow, another for most snow currently, and another for distance from location x. The program will also make a graph from the resort ojects based on distances on the major highways in Colorado and distances in miles. The Graph will be implemented within the Resort Class where as the max and min heaps will be seperate. 
+  
+Some functions that will implemented will be an algorithm that will calculate the best place to ski in Colorado based on current condidtions or future conditions. This will also take into account pass type. Another function will be to show resorts within x miles of a pregiven location. Another function would be to find the resort with the most green, blue, or black runs.  
+  
+Future implementation.  
+If time allows there can be several future capabilities to this program that could be implemented. The first one would be to gather real time data from certain websites that have models to predict snow. This would involve a webscraper. Some models could be the Univeristy of Utah Models or European or American models. This would be something to expand the final project on. Another capability would be to use several models and data to determine the best palce to ski. This would involve another Class such as a Model class that holds all the resorts will all snow predictions from that model from the web and holds different max and min heaps because the data would be different. Then there would need to be a vector or array of several models that all show different best resorts to ski at based on serveral models instead of one. This would expand the project from only getting data from OpenSnow.com to getting data from several models. Then there could be another algorithm to then determine the best palce to ski based on multiple models.
+  
 
-jon has a great clock  
-my name  
-testing  
-test  
-another change  
-another one  
-another
