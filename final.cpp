@@ -6,3 +6,12 @@
 //What the program will do is described in the READMe.md
 
 #include <iostream>
+
+using namespace std;
+
+int main(int argc, const char * argv[]) {
+
+
+
+
+}
