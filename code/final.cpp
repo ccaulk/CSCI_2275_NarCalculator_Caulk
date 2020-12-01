@@ -17,7 +17,7 @@ using namespace std;
 
 //will return the best place to ski based on curent base depth
 Resort* bestCurrentNar(){
-
+    
 }
 //will return the best place to ski based on current base depth and within a certain distance of X
 Resort* bestCurrentNarFromX(){
