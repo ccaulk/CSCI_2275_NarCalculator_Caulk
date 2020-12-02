@@ -77,7 +77,7 @@ int main(int argc, const char * argv[]) {
         Resort temp(name,pass,nl,nr,nro,ng,nb,nbl,sa,bd,ca,c,ps,d);
         resorts.push_back(temp);
     }
-    //making sure the resorts were stored correctly
+    //making sure the resorts were stored correctly this is for testing
     for(int i = 0; i < resorts.size(); i++){
         resorts[i].printResort();
     }

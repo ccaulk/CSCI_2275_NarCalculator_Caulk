@@ -5,7 +5,7 @@ using namespace std;
 
 //public mehtods
 //constructor
-Resort:: Resort(string n, string p, int nl, int nr, int nro, int ng, int nb, int nbl, int sa, int bd, int ca, int c, int ps, int d){
+Resort::Resort(string n, string p, int nl, int nr, int nro, int ng, int nb, int nbl, int sa, int bd, int ca, int c, int ps, int d){
     name = n;
     pass = p;
     numLifts = nl;

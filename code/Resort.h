@@ -1,3 +1,5 @@
+#ifndef Resort_H
+#define Resort_H
 #include <iostream>
 
 using namespace std;
@@ -42,3 +44,4 @@ class Resort{
         int predictedSnow;
         int distanceFromX;
 };
+#endif
