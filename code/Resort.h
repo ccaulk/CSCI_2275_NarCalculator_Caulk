@@ -5,7 +5,7 @@ using namespace std;
 class Resort{
     public:
         Resort(){};
-        Resort(string n, string p, int nr, int nro, int ng, int nb, int nbl, int sa, int bd, int ca, int c, int ps);
+        Resort(string n, string p, int nl, int nr, int nro, int ng, int nb, int nbl, int sa, int bd, int ca, int c, int ps, int d);
         string getName();
         string getPass();
         int getNumLifts();
@@ -20,11 +20,11 @@ class Resort{
         int getCrowd();
         int getPredictedSnow();
         int getDistanceFromX();
-        void setNumRunsOpen();
-        void setBaseDepth();
-        void setpredictedSnow();
-        void setDistanceFromX();
-        double getPercentageOpen();
+        void setNumRunsOpen(int n);
+        void setBaseDepth(int n);
+        void setpredictedSnow(int n);
+        void setDistanceFromX(int n);
+        double percentageOpen();
     private:
         string name;
         string pass;
@@ -37,7 +37,7 @@ class Resort{
         int sizeAcreage;
         int baseDepth;
         int capacity;
-        int crowed;
+        int crowd;
         int predictedSnow;
         int distanceFromX;
 };
