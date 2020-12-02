@@ -25,6 +25,7 @@ class Resort{
         void setpredictedSnow(int n);
         void setDistanceFromX(int n);
         double percentageOpen();
+        void printResort();
     private:
         string name;
         string pass;

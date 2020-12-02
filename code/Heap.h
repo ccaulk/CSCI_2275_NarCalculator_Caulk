@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "Resort.h"
+#include <queue>
 
 using namespace std;
 
@@ -9,5 +9,5 @@ class Heap{
 public:
     
 private:
-
+    //priority_queue <Resort> predictedSnow;
 };

@@ -81,3 +81,9 @@ void Resort::setDistanceFromX(int n){
 double Resort::percentageOpen(){
     return (double)(numRunsOpen/numRuns);
 }
+//prints out a resort and all the data with it
+void Resort::printResort(){
+    cout << name<<","<<pass<<","<<numLifts<<","<<numRuns<<","<<numRunsOpen<<","<<numGreen<<","
+    <<numBlue<<","<<numBlack<<","<<sizeAcreage<<","<<baseDepth<<","<<capacity<<","<<crowd<<","
+    <<predictedSnow<<","<<distanceFromX<<endl;
+}
