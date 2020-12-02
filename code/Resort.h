@@ -8,6 +8,7 @@ class Resort{
         Resort(string n, string p, int nr, int nro, int ng, int nb, int nbl, int sa, int bd, int ca, int c, int ps);
         string getName();
         string getPass();
+        int getNumLifts();
         int getNumRuns();
         int getNumRunsOpen();
         int getNumGreen();
@@ -27,6 +28,7 @@ class Resort{
     private:
         string name;
         string pass;
+        int numLifts;
         int numRuns;
         int numRunsOpen;
         int numGreen;
