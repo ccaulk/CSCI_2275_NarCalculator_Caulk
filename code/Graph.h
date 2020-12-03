@@ -13,13 +13,6 @@ public:
     ~Graph();
 };
 
-Graph::Graph(/* args */)
-{
-}
-
-Graph::~Graph()
-{
-}
 
 
 
