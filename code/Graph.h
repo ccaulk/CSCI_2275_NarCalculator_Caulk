@@ -3,12 +3,16 @@
 
 #include <iostream>
 
+using namesoace std;
+
+class Graph{
+    
+    public:
+        Graph(){};
+    private:
 
 
-
-
-
-
+};
 
 
 
