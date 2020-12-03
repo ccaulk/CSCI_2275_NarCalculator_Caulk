@@ -3,7 +3,23 @@
 
 #include <iostream>
 
+using namespace std;
 
+class Graph{
+private:
+    /* data */
+public:
+    Graph(/* args */);
+    ~Graph();
+};
+
+Graph::Graph(/* args */)
+{
+}
+
+Graph::~Graph()
+{
+}
 
 
 
