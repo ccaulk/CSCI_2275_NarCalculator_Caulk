@@ -6,18 +6,13 @@
 using namespace std;
 
 class Graph{
-private:
-    /* data */
-public:
-    Graph(/* args */);
-    ~Graph();
+    
+    public:
+        Graph(){};
+    private:
+
+
 };
-
-
-
-
-
-
 
 
 
