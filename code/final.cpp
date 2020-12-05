@@ -116,15 +116,34 @@ int main(int argc, const char * argv[]) {
     //print graph for testing
     // resortGraph->printGraph();
     //testing distance from
-    resortGraph->distacneFromX("Breckenridge");
-    vector<resortVertex*> temp = resortGraph->getVertices();
-    for(int i = 0; i < temp.size(); i++){
-        cout << temp[i]->name << " distance from Breck is " << temp[i]->distance << endl;
+    // resortGraph->distacneFromX("Breckenridge");
+    // vector<resortVertex*> temp = resortGraph->getVertices();
+    // for(int i = 0; i < temp.size(); i++){
+    //     cout << temp[i]->name << " distance from Breck is " << temp[i]->distance << endl;
+    // }
+    // //testing the Path XtoY
+    // vector<resortVertex*> temp2 = resortGraph->getPathXToY("Howelsen Hill");
+    // for(int i = 0; i < temp2.size(); i++){
+    //     cout << temp2[i]->name << "<-";
+    // }
+    // cout<< endl;
+
+    //adding the predicted snowTotals to the vector of resorts
+    fstream infile3(argv[3]);
+    int snowIn;
+    int i = 0;
+    //adds the new snow prediction to the vector of resorts
+    while(getline(infile3,line)){
+        stringstream ss(line);
+        getline(ss,name,',');
+        getline(ss,num);
+        snowIn = stoi(num);
+        if(name == resorts[i].getName())
+            resorts[i].setpredictedSnow(snowIn);
+        i++;
     }
-    //testing the Path XtoY
-    vector<resortVertex*> temp2 = resortGraph->getPathXToY("Howelsen Hill");
-    for(int i = 0; i < temp2.size(); i++){
-        cout << temp2[i]->name << "<-";
+    //for testing that the new predicted snow was added
+    for(int i = 0; i < resorts.size(); i++){
+        resorts[i].printResort();
     }
-    cout<< endl;
 }
