@@ -82,6 +82,27 @@ int main(int argc, const char * argv[]) {
     //     resorts[i].printResort();
     // }
 
-    //making a Graph of all of the resorts in Colorado based on highways and distance in miles
-
+    //making a Graph of all of the resorts in Colorado based on highways and distance in miles using the second
+    //command line argument
+    fstream infile2(argv[2]);
+    string part,str,num;
+    int miles,count;
+    Graph resortGraph();
+    while(getline(infile2,line)){
+        stringstream ss(line);
+        getline(ss,name,',');
+        resortGraph.addVertex(name);
+        count = 0;
+        while(getline(ss,part,',')){
+            if(count % 2 == 0){
+                str = part;
+            }else{
+                num = part;
+                miles = stoi(num);
+                resortGraph.addEdge(name,str,miles);
+            }
+            count ++;
+        }
+    }
+    resortGraph.printGraph();
 }
