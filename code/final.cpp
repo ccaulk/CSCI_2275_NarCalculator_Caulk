@@ -115,9 +115,16 @@ int main(int argc, const char * argv[]) {
     }
     //print graph for testing
     // resortGraph->printGraph();
+    //testing distance from
     resortGraph->distacneFromX("Breckenridge");
     vector<resortVertex*> temp = resortGraph->getVertices();
     for(int i = 0; i < temp.size(); i++){
         cout << temp[i]->name << " distance from Breck is " << temp[i]->distance << endl;
     }
+    //testing the Path XtoY
+    vector<resortVertex*> temp2 = resortGraph->getPathXToY("Howelsen Hill");
+    for(int i = 0; i < temp2.size(); i++){
+        cout << temp2[i]->name << "<-";
+    }
+    cout<< endl;
 }

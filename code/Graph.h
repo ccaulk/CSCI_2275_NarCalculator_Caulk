@@ -52,9 +52,11 @@ class Graph{
         //prints the graph
         void printGraph();
         //dijkstras algorithm starting at n and finding shortest path to all other resorts
-        void distacneFromX(string n);
+        void distacneFromX(string x);
         //returns the vertices vector to get the distances of the resorts
         vector<resortVertex*> getVertices();
+        //gets the path from Y to X assumes that distance from X was called before hand
+        vector<resortVertex*> getPathXToY(string y);
     private:
         //vector of vertices aka resorts
         vector <resortVertex*> vertices;

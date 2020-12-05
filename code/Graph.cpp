@@ -105,7 +105,19 @@ void Graph::distacneFromX(string str){
 vector<resortVertex*> Graph::getVertices(){
     return vertices;
 }
-
+//will return the path from x to y in a vector assumes that distanceFromX was called
+vector<resortVertex*> Graph::getPathXToY(string y){
+    //find the end vertex
+    resortVertex* end = findResortVertex(y);
+    //vector to return
+    vector<resortVertex*> result;
+    while(end != NULL){
+        //pushes the resort onto the vector and then moves up the parent chain until NULL
+        result.push_back(end);
+        end = end->parent;
+    }
+    return result;
+}
 //priavte methods
 
 //will return the vertex and null if it isn't there
