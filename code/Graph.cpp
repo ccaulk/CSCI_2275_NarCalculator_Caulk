@@ -9,21 +9,28 @@ using namespace std;
 //will add the resort into the graph
 void Graph::addVertex(string n){
     //if the vertex doesn't exist then add it
-    if(!findResortVertex(n)){
-        vertices.push_back(new resortVertex(n));
+    if(findResortVertex(n) == NULL){
+        resortVertex *temp = new resortVertex(n);
+        vertices.push_back(temp);
     }
 }
 
 //will add an edge between 2 vertices and create a vertex if it doesn't exist
-//and add an edge between them and if the is an edge between them don't ass another
+//and add an edge between them and if the is an edge between them don't add another
 void Graph::addEdge(string str1, string str2, int w){
     resortVertex *res1 = findResortVertex(str1);
     resortVertex *res2 = findResortVertex(str2);
     //if the first vertex isn't in the graph add it to the 
-    if(!res1)
+    if(res1 == NULL){
         addVertex(str1);
-    if(!res2)
+        //need to then make res1 points to an actual vertex instead of null
+        res1 = findResortVertex(str1);
+    }
+    //same for res2
+    if(res2 == NULL){
         addVertex(str2);
+        res2 = findResortVertex(str2);
+    }
     //check to see if there is an edge between the two resorts already
     for(int i = 0; i < res1->adj.size(); i++){
         if(res1->adj[i]->v->name == res2->name)
@@ -34,7 +41,6 @@ void Graph::addEdge(string str1, string str2, int w){
     adjResorts* two = new adjResorts(res1,w);
     res1->adj.push_back(one);
     res2->adj.push_back(two);
-
 }
 
 //will print out the vertices with the adjacency lists
@@ -44,7 +50,7 @@ void Graph::printGraph(){
         //prints the resort then all of its adjacent resorts
         cout << vertices[i]->name <<" : ";
         for(int j = 0; j < vertices[i]->adj.size(); j++){
-            cout << vertices[i]->adj[j]->v->name << ", ";
+            cout << vertices[i]->adj[j]->v->name << ","<< vertices[i]->adj[j]->weight<< "*";
         }
         cout << endl;
     }

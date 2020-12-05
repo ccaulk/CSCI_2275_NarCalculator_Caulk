@@ -1,20 +1,20 @@
-Denver,Boulder,29,Arapahoe Basin,68,Aspen Snowmass, 197, Beaver Creek, 109, Breckenridge,80,Copper,78,Crested Butte,228,Howelsen Hill, 156, Keystone,77,Loveland,57,Monarch Mountain, 157,Purgatory,363,Ski Cooper, 109,Steamboat Springs,156,Telluride, 362, Vail,97,Winter Park,67,Wolf Creek,252
+Denver,Boulder,29,Arapahoe Basin,68,Aspen Snowmass,197,Beaver Creek,109,Breckenridge,80,Copper,78,Crested Butte,228,Howelsen Hill,156,Keystone,77,Loveland,57,Monarch Mountain,157,Purgatory,363,Ski Cooper, 109,Steamboat Springs,156,Telluride,362,Vail,97,Winter Park,67,Wolf Creek,252
 Boulder,Denver,29,Eldora,20
-Arapahoe Basin,Keystone, 5, Breckenridge, 20, Loveland, 8,Copper,24,Winter Park,50
-Aspen Snowmass, Beaver Creek, 94, Vail,101
+Arapahoe Basin,Keystone,5,Breckenridge,20,Loveland,8,Copper,24,Winter Park,50
+Aspen Snowmass,Beaver Creek,94,Vail,101
 Beaver Creek,Vail, 13
-Breckenridge, Keystone,10,Copper, 17,Winter Park,66
-Copper, Keystone,21, Vail,21,Winter Park,63
-Crested Butte,Telluride,157 ,Wolf Creek,168 ,Breckenridge,166
-Eldora, Boulder,20
-Howelsen Hill,Steamboat Springs,1, Winter Park,100
+Breckenridge,Keystone,10,Copper,17,Winter Park,66
+Copper,Keystone,21,Vail,21,Winter Park,63
+Crested Butte,Telluride,157,Wolf Creek,168,Breckenridge,166
+Eldora,Boulder,20
+Howelsen Hill,Steamboat Springs,1,Winter Park,100
 Keystone,Loveland,13,Winter Park,55
 Loveland,Winter Park,43
-Monarch Mountain, Crested Butte,71,Breckenridge,95,Wolf Creek,128
+Monarch Mountain,Crested Butte,71,Breckenridge,95,Wolf Creek,128
 Purgatory,Telluride,94,Wolf Creek,111
-Ski Cooper, Vail,28,Beaver Creek,30,Crested Butte,155
+Ski Cooper,Vail,28,Beaver Creek,30,Crested Butte,155
 Steamboat Springs,Winter Park,99,Keystone,99,Breckenridge,103
 Telluride,Wolf Creek,194,Aspen Snowmass,199
-Vail, Copper,21
+Vail,Copper,21
 Winter Park,Vail,84
 Wolf Creek,Breckenridge,190

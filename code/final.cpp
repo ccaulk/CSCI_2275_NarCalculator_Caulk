@@ -78,31 +78,40 @@ int main(int argc, const char * argv[]) {
         resorts.push_back(temp);
     }
     //making sure the resorts were stored correctly this is for testing
-    // for(int i = 0; i < resorts.size(); i++){
-    //     resorts[i].printResort();
-    // }
+    for(int i = 0; i < resorts.size(); i++){
+        resorts[i].printResort();
+    }
 
     //making a Graph of all of the resorts in Colorado based on highways and distance in miles using the second
     //command line argument
     fstream infile2(argv[2]);
+    //varaibles to store data and make vertices
     string part,str,num;
     int miles,count;
-    Graph resortGraph();
+    //Graph object
+    Graph resortGraph;
+    //loop thorugh all lines of the csv file
     while(getline(infile2,line)){
+        //get the first name which will be the vertex
         stringstream ss(line);
         getline(ss,name,',');
         resortGraph.addVertex(name);
         count = 0;
+        //Then get the adjacent vertices and distance and add to adjResorts
         while(getline(ss,part,',')){
+            //if it is even it is a name
             if(count % 2 == 0){
                 str = part;
+            //odd is a distance and add to the graph
             }else{
                 num = part;
                 miles = stoi(num);
                 resortGraph.addEdge(name,str,miles);
             }
+            //indexing to get name and distance right
             count ++;
         }
     }
+    //print graph for testing
     resortGraph.printGraph();
 }
