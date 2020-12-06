@@ -57,11 +57,11 @@ class Graph{
         vector<resortVertex*> getVertices();
         //gets the path from Y to X assumes that distance from X was called before hand
         vector<resortVertex*> getPathXToY(string y);
+        //method to return the pointer to a resort in vertices
+        resortVertex* findResortVertex(string n);
     private:
         //vector of vertices aka resorts
         vector <resortVertex*> vertices;
-        //method to return the pointer to a resort in vertices
-        resortVertex* findResortVertex(string n);
         //used in dijstras to determine a stop condition
         bool allVisitedCheck();
         //used in dijstras to get minResort

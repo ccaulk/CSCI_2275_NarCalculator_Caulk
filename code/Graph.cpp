@@ -118,8 +118,6 @@ vector<resortVertex*> Graph::getPathXToY(string y){
     }
     return result;
 }
-//priavte methods
-
 //will return the vertex and null if it isn't there
 resortVertex* Graph::findResortVertex(string n){
     for(int i = 0; i < vertices.size(); i++){
@@ -128,6 +126,9 @@ resortVertex* Graph::findResortVertex(string n){
     }
     return NULL;
 }
+
+//priavte methods
+
 //will return if all the resorts have been visited
 bool Graph::allVisitedCheck(){
     //goes through each vertex and checks if it was visited
