@@ -18,22 +18,22 @@ Project Summary-
   This Project is to help some decide where to ski or snowboard. Based on information in the csv files (the only one you should modify is the SnowPredictions.csv and only modify the numbers). The program will first get all the resorts from Resorts.csv (don't touch) and make a Graph based on the highway system from MapOfColorado.csv (also don't touch). Then using that data and SnowPRedictions.csv data there are many heaps that are created each based on a different aspect. You can choose a starting point such as Denver or Boulder or a ski resort and the program will give you suggestions of where to ski for the best time
 
   How to run-  
-  To run type:
-  g++ final.cpp Graph.cpp Heap.cpp Resort.cpp -o final
-  ./final Resorts.csv MapOfColorado.csv SnowPredictions.csv
+  To run type:  
+  g++ final.cpp Graph.cpp Heap.cpp Resort.cpp -o final  
+  ./final Resorts.csv MapOfColorado.csv SnowPredictions.csv  
   This should run the program add the -std=c++11 if necessary 
-  You can and should modify the numbers in the SnowPredictions.csv file to get different results the numbers in this file represent the predicted snow in inches at each resort
-  Options:
-  For all options the heap will not re push resorts back so once a resort is read it will not reappear. The only exception is 4,5,7,8 which can be reset with option 9 because it is dependent on a start location X
-  1-3 self-explanatory returns what it says it will
-  4 Will return the first closest resort to the location X which is user provided use once then use 5 to get the second and third and so on closets resorts to X until 9 is hit
+  You can and should modify the numbers in the SnowPredictions.csv file to get different results the numbers in this file represent the predicted snow in inches at each resort  
+  Options:  
+  For all options the heap will not re push resorts back so once a resort is read it will not reappear. The only exception is 4,5,7,8 which can be reset with option 9 because it is dependent on a start location X  
+  1-3 self-explanatory returns what it says it will  
+  4 Will return the first closest resort to the location X which is user provided use once then use 5 to get the second and third and so on closets resorts to X until 9 is hit  
   5 Will return the next closest resort from X and is an extension of 4 (type 4,5,5, . . . not 4,4,5 . . . )
-  -To reset the destition X hit 9
-  6- Will return the best resort based on a calculation in Resort.cpp and shows the score
-  7- Will return the best resort (based on a calculation in Resort.cpp) that is based around a starting location X hit 7 once then 8 to get the second and third and so one best resorts from X until 9 is hit which will reset the location
-  8- Will return the second and third and so on best resorts to ski at based on the location X choosen in 7 is an extension of 7
-  9-Will reset the destition and destition heaps so you can change the destitions is 4 and 7. You must hit this before hitting 4 or 7 again to get correct results
-  10-quit
+  -To reset the destition X hit 9  
+  6- Will return the best resort based on a calculation in Resort.cpp and shows the score  
+  7- Will return the best resort (based on a calculation in Resort.cpp) that is based around a starting location X hit 7 once then 8 to get the second and third and so one best resorts from X until 9 is hit which will reset the location  
+  8- Will return the second and third and so on best resorts to ski at based on the location X choosen in 7 is an extension of 7  
+  9-Will reset the destition and destition heaps so you can change the destitions is 4 and 7. You must hit this before hitting 4 or 7 again to get correct results  
+  10-quit  
 
   Dependencies-  
   all files are in the code folder and should not require anything else
@@ -46,7 +46,7 @@ Project Summary-
 
   Contributors-  
   Caleb Caulk
-  
+
   Open issues/ bugs-  
   The options 7 and 8 give a score that is to low
 
