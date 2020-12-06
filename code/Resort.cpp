@@ -64,7 +64,35 @@ int Resort::getPredictedSnow(){
 int Resort::getDistanceFromX(){
     return distanceFromX;
 }
+double Resort::getOverall(){
+    return overall;
+}
+double Resort::getBestToX(){
+    return bestToX;
+}
 //sets for variables that can change
+//this sets a rating to the resort based on snow depth amount open crowd and predicted
+void Resort::setOverall(){
+    if(crowd == 0)
+    //assign crowd value to 5 which is semi busy
+        crowd = 5;
+    if(predictedSnow == 0)
+    //set to 1 to not make calculation 0
+        predictedSnow = 1;
+        //calculation
+    overall = ((double)baseDepth * (double)predictedSnow * (double)percentageOpen()*100) / (double)crowd;
+}
+//this sets a rating to the resort based on overall and distance from X
+void Resort::setBestToX(){
+    if(crowd == 0)
+    //assign crowd value to 5 which is semi busy
+        crowd = 5;
+    if(predictedSnow == 0)
+    //set to 1 to not affect calculation
+        predictedSnow = 1;
+        //calculation
+    bestToX = ((double)baseDepth * (double)predictedSnow * (double)percentageOpen() *100) / ((double)crowd*(double)distanceFromX);
+}
 void Resort::setNumRunsOpen(int n){
     numRunsOpen = n;
 }
@@ -79,7 +107,7 @@ void Resort::setDistanceFromX(int n){
 }
 //methods to calculate other aspects of the resort
 double Resort::percentageOpen(){
-    return (double)(numRunsOpen/numRuns);
+    return (double)(numRunsOpen)/(double)(numRuns);
 }
 //prints out a resort and all the data with it
 void Resort::printResort(){

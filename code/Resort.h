@@ -22,6 +22,10 @@ class Resort{
         int getCrowd();
         int getPredictedSnow();
         int getDistanceFromX();
+        double getOverall();
+        double getBestToX();
+        void setOverall();
+        void setBestToX();
         void setNumRunsOpen(int n);
         void setBaseDepth(int n);
         void setpredictedSnow(int n);
@@ -43,5 +47,7 @@ class Resort{
         int crowd;
         int predictedSnow;
         int distanceFromX;
+        double overall;
+        double bestToX;
 };
 #endif
