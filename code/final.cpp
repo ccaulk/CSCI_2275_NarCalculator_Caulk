@@ -15,25 +15,6 @@
 #include "Resort.h"
 
 using namespace std;
-//functions to call that will determine the best place to ski based on what the function is
-
-//will return the best place to ski based on curent base depth
-// Resort* bestCurrentNar(){
-
-// }
-// //will return the best place to ski based on current base depth and within a certain distance of X
-// Resort* bestCurrentNarFromX(){
-
-// }
-// //will return the best place to ski based on predicted snow 
-// Resort* bestPredictedNar(){
-
-// }
-// //will return the best place to ski based on predicted snow and within a certain distance of X
-// Resort* bestPredictedNarFromX(){
-    
-// }
-
 
 //main to run everything
 int main(int argc, const char * argv[]) {
@@ -75,6 +56,7 @@ int main(int argc, const char * argv[]) {
         d =stoi(data);
         //making a resort object and adding it to the resorts vector
         Resort temp(name,pass,nl,nr,nro,ng,nb,nbl,sa,bd,ca,c,ps,d);
+        temp.setOverall();
         resorts.push_back(temp);
     }
     //making sure the resorts were stored correctly this is for testing
@@ -143,7 +125,134 @@ int main(int argc, const char * argv[]) {
         i++;
     }
     //for testing that the new predicted snow was added
-    for(int i = 0; i < resorts.size(); i++){
-        resorts[i].printResort();
+    // for(int i = 0; i < resorts.size(); i++){
+    //     resorts[i].printResort();
+    // }
+
+    //creating the heaps of the resorts
+    //choosing a pointer so it is easier to pass to functions
+    Heap *resortHeaps = new Heap();
+    //adding heaps that don't require distance from X
+    resortHeaps->addToMaxBase(resorts);
+    resortHeaps->addToMaxPred(resorts);
+    resortHeaps->addToMaxOp(resorts);
+    resortHeaps->addToOverall(resorts);
+    //menu
+    std::string dmenu = "======Main Menu=====\n"
+	    "1. Get resort with the most current snow\n"
+		"2. Get resort with the most predicted snow\n"
+        "3. Get resort with the most runs open\n"
+        "4. Get resort closest to X\n"
+        "5. Get next closest resorts to X\n"
+		"6. Best resort overall\n"
+		"7. Best resort from X\n"
+        "8. Get next best resorts from X\n"
+        "9. Reset Distance from X\n"
+		"10. Quit";
+    //prints menu and sets up the loop to run
+    int choice;
+    bool exit = false;
+    cout << dmenu << endl;
+    //options and running through
+    while(cin >> choice) {
+        // flush the newlines and other characters
+        cin.clear();
+        cin.ignore();
+        switch (choice){
+            case 1:{
+                //get the resort
+                Resort temp = resortHeaps->popMaxBase();
+                //print
+                cout << temp.getName() << " has a base depth of " << temp.getBaseDepth() << " inches" << endl;
+                break;
+            }
+            case 2:{
+                //get the resort
+                Resort temp = resortHeaps->popMaxPred();
+                //print
+                cout << temp.getName() << " has a predicted storm total of " << temp.getPredictedSnow()<< " inches" << endl;
+                break;
+            }
+            case 3:{
+                //get the resort
+                Resort temp = resortHeaps->popMaxOp();
+                //print
+                cout << temp.getName() << " has " << temp.percentageOpen()*100 << " percent of runs open" << endl;
+                break;
+            }
+            case 4:{
+                //gets the resort to base from or from denver or boulder
+                cout << "Please enter a resort" << endl;
+                cin >> str;
+                //then will run dijkstras
+                resortGraph->distacneFromX(str);
+                //Then goes through all the resorts add updates the distance
+                for(int i = 0; i < resorts.size(); i++){
+                    string name = resorts[i].getName();
+                    resorts[i].setDistanceFromX(resortGraph->findResortVertex(name)->distance);
+                }
+                //then adds the updated distances to the new heap
+                resortHeaps->addToMinFromX(resorts);
+                //gets the closest
+                Resort temp = resortHeaps->popMinFromX();
+                cout << temp.getName() << " is " << temp.getDistanceFromX() << " miles from " << str << endl;
+                break;
+            }
+            case 5:{
+                //gets the next closest resorts
+                Resort temp = resortHeaps->popMinFromX();
+                cout << temp.getName() << " is " << temp.getDistanceFromX() << " miles from " << str << endl;
+                break;
+            }
+            case 6:{
+                //get the resort
+                Resort temp = resortHeaps->popOverall();
+                //print
+                cout << temp.getName() << " is one of the best overall ski resorts to visit with a score of " << temp.getOverall() << endl;
+                break;
+            }
+            case 7:{
+                //gets the resort to base from or from denver or boulder
+                cout << "Please enter a resort" << endl;
+                cin >> str;
+                //then will run dijkstras
+                resortGraph->distacneFromX(str);
+                //Then goes through all the resorts add updates the distance
+                for(int i = 0; i < resorts.size(); i++){
+                    string name = resorts[i].getName();
+                    resorts[i].setDistanceFromX(resortGraph->findResortVertex(name)->distance);
+                }
+                //make the heap
+                resortHeaps->addTobestStartX(resorts);
+                Resort temp = resortHeaps->popBestStartX();
+                cout << temp.getName() << " is " << temp.getDistanceFromX() << " miles from " << str << " and is one of the best resorts nearby" <<endl;
+                cout << "With a score of " << temp.getBestToX() << endl;
+                break;
+            }
+            case 8:{
+                //gets the next closest resorts that are good
+                Resort temp = resortHeaps->popBestStartX();
+                cout << temp.getName() << " is " << temp.getDistanceFromX() << " miles from " << str << " and is one of the best resorts nearby" <<endl;
+                cout << "With a score of " << temp.getBestToX() << endl;
+                break;
+            }
+            case 9:{
+                //resets the distance from X so it can be used with a different resort
+                resortGraph->resetSearchVars();
+                //reset heap so it also works for the next time and no duplicate data
+                resortHeaps->clearMinFromX();
+                resortHeaps->clearBestStartX();
+                break;
+            }
+            case 10:{
+                exit = true;
+                break;
+            }
+            default:
+                break;
+        }
+        if(exit)
+            break;
+        cout << dmenu << endl;
     }
 }
