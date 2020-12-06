@@ -21,7 +21,7 @@ Project Summary-
   To run type:  
   g++ final.cpp Graph.cpp Heap.cpp Resort.cpp -o final  
   ./final Resorts.csv MapOfColorado.csv SnowPredictions.csv  
-  This should run the program add the -std=c++11 if necessary 
+  This should run the program add the -std=c++11 if necessary.
   You can and should modify the numbers in the SnowPredictions.csv file to get different results the numbers in this file represent the predicted snow in inches at each resort  
   Options:  
   For all options the heap will not re push resorts back so once a resort is read it will not reappear. The only exception is 4,5,7,8 which can be reset with option 9 because it is dependent on a start location X  
