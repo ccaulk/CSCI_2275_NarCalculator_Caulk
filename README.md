@@ -34,6 +34,7 @@ Project Summary-
   8- Will return the second and third and so on best resorts to ski at based on the location X choosen in 7 is an extension of 7  
   9-Will reset the destition and destition heaps so you can change the destitions is 4 and 7. You must hit this before hitting 4 or 7 again to get correct results  
   10-quit  
+  The locations to choose from for X are Denver,Boulder,Arapahoe Basin,Aspen Snowmass,Beaver Creek,Breckenridge,Copper,Crested Butte,Eldora,Howelsen Hill,Keystone,Loveland,Monarch Mountain,Purgatory,Ski Cooper,Steamboat Springs,Telluride,Vail,Winter Park,Wolf Creek
 
   Dependencies-  
   all files are in the code folder and should not require anything else
